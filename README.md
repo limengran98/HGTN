@@ -13,16 +13,14 @@ Graph neural networks (GNNs) have been widely used for graph structure learning 
 > python main.py --dataset [ACM/DBLP/IMDB/CITE/REUT/SDUT]
 
 ### If you find our work useful in your research, please consider citing:
-> @article{li2022hypergraph,
->
->  title={Hypergraph Transformer Neural Networks},
->  
->  author={Li, Mengran and Zhang, Yong and Li, Xiaoyong and Zhang, Yuchen and Yin, Baocai},
->  
->  journal={ACM Transactions on Knowledge Discovery from Data (TKDD)},
->  
->  year={2022},
->  
->  publisher={ACM New York, NY}
->  
+
+>  @article{li2023hypergraph,
+>   title={Hypergraph transformer neural networks},
+>   author={Li, Mengran and Zhang, Yong and Li, Xiaoyong and Zhang, Yuchen and Yin, Baocai},
+>   journal={ACM Transactions on Knowledge Discovery from Data},
+>   volume={17},
+>   number={5},
+>   pages={1--22},
+>   year={2023},
+>   publisher={ACM New York, NY}
 > }
