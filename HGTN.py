@@ -16,11 +16,7 @@ from torch.nn.parameter import Parameter
 #from layers import GraphAttentionLayer, SpGraphAttentionLayer
 import argparse
 import numpy as np
-"""
-type_hyperedge  不同种类超边数目
-num_layers     超边矩阵相乘次数
 
-"""
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 class AE(nn.Module):
@@ -56,7 +52,6 @@ class HGTN(nn.Module):
         self.drpoput = dropout
         self.nheads = nheads
         self.alpha = alpha
-        self.gat = GAT(self.w_in,self.nhid,self.num_class,self.drpoput ,self.alpha ,self.nheads)
         layers = []
         for i in range(num_layers):
             if i == 0:
@@ -176,10 +171,7 @@ class HGTN(nn.Module):
                 #X_tmp = self.hgcn_conv(feature,H[i])
                 X_ = torch.cat((X_,X_tmp), dim=1)  #n,20*c
        
-        #X_ = self.hgcn_conv(X,H[0])
-        #X_ = self.gat(X,H[0])    
-        #X_ = F.dropout(X_, self.dropout,training=self.training)
-        #X = F.softmax(self.linear1(X))  
+
         
         q = 1.0 / (1.0 + torch.sum(torch.pow(X11.unsqueeze(1) - self.class_layer, 2), 2) )
         q = q.pow((1.0 + 1.0) / 2.0)
